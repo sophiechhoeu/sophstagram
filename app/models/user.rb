@@ -17,12 +17,10 @@ has_and_belongs_to_many :following, class_name: 'User', join_table: :followers,
   foreign_key: :follower_id, association_foreign_key: :followed_id
 
   def followed_by?(user)
-    puts "folowed_by"
     followers.exists?(user.id)
   end
 
   def toggle_followed_by(user)
-    puts "TESTINGS".green
     if followers.exists?(user.id)
       followers.destroy(user)
     else
