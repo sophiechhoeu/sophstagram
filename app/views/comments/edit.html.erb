@@ -1,0 +1,13 @@
+<%= form_with(model: @comment) do |form| %>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_field :content, id: :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', root_path %>

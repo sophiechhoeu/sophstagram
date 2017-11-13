@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+  <%= link_to (image_tag("instagram-glyph.svg", class:"nav-brand")), root_path %>
+  <div class="d-inline-flex collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link billabong" href="/"> Sophstagram</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <%= form_tag(root_path, method: "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+      <% end %>
+    </form>
+    <div class="add-new"><%= link_to (image_tag("user_profile.svg", class:"nav-link")), profile_path %></div>
+    <div class="add-new"><%= link_to (image_tag("add_new.svg", class: "nav-link")), new_photo_path %></div>
+    <div class="login">
+      <%= render 'partials/userlogin' %>
+   </div>
+  </div>
+</nav>

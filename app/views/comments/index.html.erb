@@ -1,0 +1,23 @@
+
+<div class="d-flex card card-header text-center">Comments</div>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <% @photo.comments.each do |comment |%>
+    <li class="list-group-item">
+      <span class="user-name"><%= comment.user.username %></span> <%= comment.content %>
+      <p class="timestamp"><%= time_ago_in_words comment.created_at%> ago</p>
+    </li>
+    <% end %>
+  </ul>
+  <div class="card-body comment-body">
+    <%= form_for [@photo, @photo.comments.new ] do |form| %>
+    <%= form.text_field :content, placeholder: "Add a Comment", class: "comment-form"%>
+    <% end%>
+
+  </div>
+
+
+
+<div class="card-header">
+  <%= link_to 'Back', root_path %>
+</div>

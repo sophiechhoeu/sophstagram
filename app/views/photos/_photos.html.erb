@@ -1,0 +1,70 @@
+<% photos.each do |photo| %>
+
+  <div class="card mx-auto col-12 col-7 rounded-0" style="width: 40rem;">
+    <div class="card-title">
+      <span class="d-flex justify-content-start">
+        <%= image_tag (photo.user.profile.avatar_url), class: 'profile-pic p-2' %>
+        <%= link_to photo.user.username, user_path(photo.user.id), class:'p-2' %>
+        <%= link_to (image_tag("edit.svg")), edit_photo_path(photo), class:'ml-auto p-2'%>
+      </span>
+    </div><!--end of card title-->
+
+
+    <%= image_tag photo.image_url, class: 'card-img-top' %> <!--photo image -->
+      <div class="card-body">
+        <p class="card-text"><%= photo.caption %></p>
+
+        <!-- likes -->
+      <span class="likes">
+        <% if current_user.voted_as_when_voted_for photo %>
+           <%= link_to  dislike_photo_path(photo), class:"btn btn-default", method: :put do %>
+            <%=image_tag("love_heart.svg")%>
+          <% end %>
+            <%= photo.get_upvotes.size %>
+          <% else %>
+            <%= link_to like_photo_path(photo), class:"btn btn-default", method: :put do %>
+          <%=image_tag("empty_heart.svg")%>
+            <% end %>
+          <%= photo.get_upvotes.size %>
+        <% end %>
+      </span>
+      <span class="comments"><%= link_to (image_tag("comments.svg")), photo_comments_path(photo) %></span>
+      <p class="card-text">
+        <% photo.votes_for.voters.each do |votes| %>
+         <%= votes.username %>,
+        <% end %>
+      </p>
+
+
+
+
+      <!-- comments all path -->
+
+
+
+
+      <% if photo.comments.any? %>
+      <ul class="list-group list-group-flush">
+        <% photo.comments.each do |comment |%>
+        <li class="list-group-item">
+          <span class="user-name"><%= comment.user.username %></span> <%= comment.content %>
+          <p class="timestamp"><%= time_ago_in_words comment.created_at%> ago</p>
+          <% if comment.user == current_user %>
+            <%= link_to(image_tag("trashbin.svg"), photo_comment_path(photo, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default")%>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+      <% end %>
+
+
+      <div class="card-body comment-body">
+        <%= form_with(model: [photo, @comment ]) do |form| %>
+        <%= form.text_field :content, placeholder: "Add a Comment", class: "comment-form"%>
+        <% end%>
+      </div>
+
+    </div> <!--end of card body-->
+  </div>
+
+<% end %>

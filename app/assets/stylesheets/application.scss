@@ -1,0 +1,197 @@
+
+@import "bootstrap";
+
+@font-face {
+font-family: 'Billabong';
+font-style: bold;
+font-weight: normal;
+src: local('Billabong'), url('Billabong.woff') format('woff');
+color: black;
+}
+
+.billabong {
+    font-family: 'Billabong', sans-serif;
+    font-size: 25px;
+    color: black;
+}
+
+.photo-col {
+  max-width: 32%;
+  max-height: 80%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.bio-name {
+  font-style: bold;
+}
+
+.img-thumbnail {
+  border-style: none;
+  margin-left: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.login-logo {
+  text-align: center;
+}
+
+.login-field {
+  text-align: center;
+}
+
+.login-card {
+  margin: 0 auto;
+  width: 100%
+}
+
+.signup{
+  margin-top: 10px;
+  align-items: center;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+
+
+
+.font-logo{
+  color: black;
+}
+
+#user-login{
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+}
+
+.user-name{
+  font-weight: 600;
+}
+
+.profile-pics{
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+
+.card-img-top{
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  border-radius: none;
+}
+
+.user-profile {
+  font-size: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  margin-left: 20px;
+}
+
+.about-me{
+  margin-left: 20px;
+}
+
+.profile-bio{
+  margin-left: 20px;
+}
+
+.add-new{
+  vertical-align: baseline;
+}
+
+.timestamp {
+  font-size: 12px;
+}
+
+
+// .edit-btn{
+//   margin-left:500px;
+// }
+
+
+
+
+.card-title {
+  height: 64px;
+  padding: 14px 20px;
+  color: #125688;
+  font-size: 15px;
+  line-height: 18px;
+  border-radius: none;
+}
+
+.profile-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.postfont {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.username {
+  margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  margin-bottom: 50px;
+
+}
+
+.field{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.comment-head {
+  margin-left: 10px;
+}
+
+
+.login{
+  margin-left: 10px;
+}
+
+.comment-form{
+  border-style: none;
+  width:90%;
+}
+
+.comment-body {
+  border-top-style: solid;
+  border-width: 2px;
+}
+
+.sign-up{
+  text-align: center;
+}
+
+.profile-footer {
+  margin-left: 15px;
+}
+
+
+@media (max-width: 575px){
+  .form-inline {
+    display: none;
+  }
+}
