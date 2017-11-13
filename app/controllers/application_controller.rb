@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
    def after_sign_in_path_for(resource)
     if resource.profile == nil
-     edit_profile_path(profile_url)
+     edit_profile_path
     end
    end
 
