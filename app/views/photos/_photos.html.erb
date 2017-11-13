@@ -3,11 +3,9 @@
   <div class="card mx-auto col-12 col-7 rounded-0" style="width: 40rem;">
     <div class="card-title">
       <span class="d-flex justify-content-start">
-        <% if current_user == photo.user %>
         <%= image_tag (photo.user.profile.avatar_url), class: 'profile-pic p-2' %>
         <%= link_to photo.user.username, user_path(photo.user.id), class:'p-2' %>
         <%= link_to (image_tag("edit.svg")), edit_photo_path(photo), class:'ml-auto p-2'%>
-      <% end %>
       </span>
     </div><!--end of card title-->
 
